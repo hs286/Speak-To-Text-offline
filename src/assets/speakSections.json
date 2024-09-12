@@ -1,0 +1,29 @@
+{
+  "phases": {
+    "singleAnswers": [
+      {
+        "promptPath": "assets/images/grocery.jpg",
+        "audioPath": "assets/audio/grocery.mp3",
+        "text": "grocery"
+      },
+      {
+        "promptPath": "assets/images/product.jpg",
+        "audioPath": "assets/audio/product.mp3",
+        "text": "product"
+      },
+      {
+        "promptPath": "assets/images/Can_you_imagine_living_in_a_vi.jpg",
+        "audioPath": "assets/audio/Can_you_imagine_living_in_a_vi.mp3",
+        "text": "Can you imagine living in a village?"
+      },
+      {
+        "promptPath": "assets/images/A_grocery_shop_has_fewer_produ.jpg",
+        "audioPath": "assets/audio/A_grocery_shop_has_fewer_produ.mp3",
+        "text": "A grocery shop has fewer products than a supermarket"
+      }
+    ]
+  },
+  "imagePath": "assets/images/image.jpg",
+  "name": "Life in Rural Alaska 1",
+  "description": "imagine; village; connect; reach; grocery; product; mail; expensive"
+}

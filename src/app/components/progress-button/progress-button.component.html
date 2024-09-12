@@ -1,0 +1,15 @@
+<span class="label">{{ current }}/{{ total }}</span>
+<div class="chevron-container" *ngIf="isNext === false">
+  <div class="chevron chevron-border"></div>
+  <div class="chevron chevron-inner"></div>
+  <button (click)="onBack()" [disabled]="disabled">
+    <div class="chevron-text">Prev</div>
+  </button>
+</div>
+<div class="chevron-container" *ngIf="isNext === true">
+  <div class="chevron-right chevron-border"></div>
+  <div class="chevron-right chevron-right-inner"></div>
+  <button (click)="onNext()" [disabled]="disabled">
+    <div class="chevron-text-right">next</div>
+  </button>
+</div>

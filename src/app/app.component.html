@@ -1,0 +1,20 @@
+<!--The content below is only a placeholder and can be replaced.-->
+<ng-container *ngIf="speakSections.length">
+  <ez-top-bar [title]="jsonData.name"></ez-top-bar>
+  <ez-image-handler
+    [imageSrc]="speakSections[currentSpeechExerciseIndex].promptPath"
+  ></ez-image-handler>
+  <ez-playback-handler
+    [text]="speakSections[currentSpeechExerciseIndex].text"
+    [audioSrc]="speakSections[currentSpeechExerciseIndex].audioPath"
+    [isDone]="isDone"
+  ></ez-playback-handler>
+  <ez-bottom-bar
+    [index]="currentSpeechExerciseIndex"
+    [totalLessonSegments]="speakSections.length"
+    [feedbackUrls]="feedbackUrls"
+    (isNext)="handleProgressClick($event)"
+    (selectFirst)="selectFirstSpeechExercise()"
+    (tickEmitter)="handleIsDone($event)"
+  ></ez-bottom-bar>
+</ng-container>

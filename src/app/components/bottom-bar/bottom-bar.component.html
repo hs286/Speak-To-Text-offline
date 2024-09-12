@@ -1,0 +1,41 @@
+<div class="bottom-bar" [class.recording]="isRecording">
+  <ng-container *ngIf="!isDone; else videoTemplate">
+    <div class="counter">
+      <div class="count" [class.selected]="repeatation >= 1">1</div>
+      <div class="count" [class.selected]="repeatation >= 2">2</div>
+      <div class="count" [class.selected]="repeatation >= 3">3</div>
+    </div>
+  </ng-container>
+  <ng-template #videoTemplate>
+    <div class="video-container">
+      <video width="200" height="120" autoplay>
+        <source [src]="randomUrl" type="video/mp4" />
+      </video>
+    </div>
+  </ng-template>
+  <div class="left-cell"></div>
+  <div class="center-cell-container">
+    <ez-progress-button
+      [isNext]="false"
+      class="ez-progress-button"
+      [total]="totalLessonSegments"
+      [current]="index + 1"
+      [disabled]="index === 0"
+      (change)="setPrev($event)"
+    ></ez-progress-button>
+    <ez-record-button
+      [disabled]="repeatation >= 3"
+      (recording)="handleIsRecording($event)"
+      (isCompleted)="handleIsExerciseCompleted($event)"
+    ></ez-record-button>
+    <ez-progress-button
+      [isNext]="true"
+      class="ez-progress-button"
+      [total]="totalLessonSegments"
+      [current]="index + 1"
+      [disabled]="repeatation < 3"
+      (change)="setPrev($event)"
+    ></ez-progress-button>
+  </div>
+  <div class="right-cell" [class.recording]="isRecording"></div>
+</div>
